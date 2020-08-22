@@ -1,4 +1,7 @@
 from sklearn.base import BaseEstimator, TransformerMixin
+from sklearn.neural_network import MLPClassifier
+from sklearn import preprocessing
+from sklearn.utils import resample
 
 
 # All sklearn Transforms must have the `transform` and `fit` methods
