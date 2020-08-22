@@ -25,5 +25,5 @@ class DropColumns(BaseEstimator, TransformerMixin):
 #         data.columns = columns
         
 #         return data
-        return data.drop(labels=self.columns, axis='columns')
+        return X.copy().drop(labels=self.columns, axis='columns')
     
