@@ -16,7 +16,7 @@ class DropColumns(BaseEstimator, TransformerMixin):
         # Primeiro realizamos a cópia do dataframe 'X' de entrada
         data = X.copy()
         # Retornamos um novo dataframe sem as colunas indesejadas
-        data = data.drop(labels=self.columns, axis='columns')
+#         data = data.drop(labels=self.columns, axis='columns')
 #         columns = data.columns
 #         x = data.values
 #         min_max_scaler = preprocessing.MinMaxScaler()
@@ -24,5 +24,6 @@ class DropColumns(BaseEstimator, TransformerMixin):
 #         data = pd.DataFrame(x_scaled)
 #         data.columns = columns
         
-        return data
+#         return data
+        return data.drop(labels=self.columns, axis='columns')
     
