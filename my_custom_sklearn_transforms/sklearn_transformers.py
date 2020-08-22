@@ -17,13 +17,11 @@ class DropColumns(BaseEstimator, TransformerMixin):
         data = X.copy()
         # Retornamos um novo dataframe sem as colunas indesejadas
         data = data.drop(labels=self.columns, axis='columns')
-        perfil = data['PERFIL']
         columns = data.columns
-        x = data.loc[:, data.columns != 'PERFIL'].values
+        x = data.values
         min_max_scaler = preprocessing.MinMaxScaler()
         x_scaled = min_max_scaler.fit_transform(x)
         data = pd.DataFrame(x_scaled)
-        data = data.join(perfil)
         data.columns = columns
         
         return data
